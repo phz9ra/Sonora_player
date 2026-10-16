@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="player">
+        <header>Media player Senai</header>
+
+        <main>
+            <div class="titulos">
+                <img src="imagenes/capa.png" alt="Capa da música">
+                <h3 id="nome_musica">Nenhuma musica selecionada</h3>
+                <p id="nome_artista">Escolha musicas da sua biblioteca</p>
+            </div>
+
+            <div class="controles">
+                <button type="button" id="retrasar" aria-label="Música anterior"><img src="imagenes/rewind-button.png" alt="Anterior"></button>
+                <button type="button" id="playPause" aria-label="Reproduzir"><img id="iconePlayPause" src="imagenes/play-buttton.png" alt="Play"></button>
+                <button type="button" id="next" aria-label="Próxima música"><img src="imagenes/forward-button.png" alt="Próxima"></button>
+            </div>
+
+            <div class="progresso">
+                <span id="tempoAtual">00:00</span>
+                <input type="range" id="barra" min="0" max="100" value="0" aria-label="Progresso da música">
+                <span id="duracao">00:00</span>
+                <span aria-hidden="true">🔊</span>
+                <input type="range" id="barraV" min="0" max="100" value="70" aria-label="Volume">
+            </div>
+
+            <section class="biblioteca" aria-labelledby="tituloBiblioteca">
+                <h2 id="tituloBiblioteca">Biblioteca de musicas</h2>
+                <p>Selecione arquivos de audio do seu dispositivo para adicionar na biblioteca.</p>
+                <label class="selecionar-musicas" for="seletorMusicas">Adicionar musicas</label>
+                <input id="seletorMusicas" type="file" accept="audio/*" multiple hidden>
+                <ul id="listaMusicas" aria-label="Musicas importadas">
+                    <li class="biblioteca-vazia">Suas musicas selecionadas aparecerao aqui.</li>
+                </ul>
+            </section>
+
+            <footer><small>&copy; Senai 2026 Media Player</small></footer>
+        </main>
+    </div>
+
+    <audio id="audio"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
